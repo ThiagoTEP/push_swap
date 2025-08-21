@@ -2,7 +2,7 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-//# include "../libs/libft/libft.h"
+# include "libft/libft.h"
 #include <unistd.h>
 #include <sys/param.h>
 
