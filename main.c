@@ -24,7 +24,7 @@ int	ps_parser(int ac, char **av, t_stack **a)
 	if (!check_max_min(a))
 		return (free_list(a), ft_printf(ERROR_MAX_MIN, RED, ERROR,
 				DEFAULT_COLOR), 0);
-	if (!check_organized(a))
+	if (check_organized(a))
 		return (free_list(a), 0);
 	return (1);
 }
@@ -34,26 +34,31 @@ int	ps_parser_ac2(int ac, char **split)
 	if (ac == 2)
 	{
 		if (!check_digits(split))
-			return (0);
+			return (ft_printf(ERROR_ISDIGIT, RED, ERROR, DEFAULT_COLOR), 0);
 	}
 	return (1);
 }
 
-void	numbers_count(t_stack **a, t_stack **b)
+void numbers_count(t_stack **a, t_stack **b)
 {
-	int	lstsize;
+    int lstsize;
 
-	lstsize = lst_size(a);
-	if (lstsize == 2)
-		op_two(a);
-	else if (lstsize == 3)
-		op_three(a);
-	else if (lstsize == 4)
-		op_four(a, b);
-	else if (lstsize == 5)
-		op_five(a, b);
-	else if (lstsize > 6)
-		radix(a, b);
+    lstsize = lst_size(a);
+    if (check_organized(a))
+    {
+        free_list(a);
+        return;
+    }
+    if (lstsize == 2)
+        op_two(a);
+    else if (lstsize == 3)
+        op_three(a);
+    else if (lstsize == 4)
+        op_four(a, b);
+    else if (lstsize == 5)
+        op_five(a, b);
+    else if (lstsize > 5)
+        radix(a, b);
 }
 
 int	main(int ac, char **av)

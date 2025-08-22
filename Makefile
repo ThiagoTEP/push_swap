@@ -16,6 +16,8 @@ $(NAME): $(OBJ)
 	@cd libft && make
 	@cc $(OBJ)  $(CFLAGS) $(LIBFT) -o $(NAME)
 	@echo "\n------------- COMPILATION DONE -------------\n"
+	@echo "\n---- WELCOME TO THE PUSH_SWAP PROJECT ------\n"
+	@echo "\n--------------- BY THEVARIS ----------------\n"
 
 clean:
 	@rm -f $(OBJ)
