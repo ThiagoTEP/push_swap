@@ -6,7 +6,7 @@ SCR = main.c data_utils.c free_utils.c ft_lists.c \
 
 OBJ = $(SCR:.c=.o)
 
-CFLAGS += -Wall -Werror -Wextra
+CFLAGS += -Wall -Werror -Wextra -g
 
 LIBFT = ./libft/libft.a
 

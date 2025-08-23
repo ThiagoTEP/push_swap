@@ -1,5 +1,5 @@
 #include "push_swap.h"
-
+#include <stdio.h>
 int	check_digits(char **av)
 {
 	int	i;
@@ -8,6 +8,8 @@ int	check_digits(char **av)
 	i = -1;
 	while (av[++i])
 	{
+		if (!av[i][0])
+			return (0);
 		j = -1;
 		if (av[i][0] == '-' || av[i][0] == '+')
 			j++;

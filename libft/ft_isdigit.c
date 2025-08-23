@@ -6,7 +6,7 @@
 /*   By: thevaris <thevaris@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 16:42:18 by thevaris          #+#    #+#             */
-/*   Updated: 2025/04/10 15:05:07 by thevaris         ###   ########.fr       */
+/*   Updated: 2025/08/23 13:54:27 by thevaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 int ft_isdigit(int c)
 {
-    return (c >= '0' && c <= '9');
+	if((c >= '0' && c <= '9') && c != '\0' )
+		return (1);
+	else 
+		return (0);
 }
 
 /*
