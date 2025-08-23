@@ -1,10 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: thevaris <thevaris@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/08/23 14:56:41 by thevaris          #+#    #+#             */
+/*   Updated: 2025/08/23 15:03:03 by thevaris         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
 # include "libft/libft.h"
-#include <unistd.h>
-#include <sys/param.h>
+# include <unistd.h>
+# include <sys/param.h>
 
 //----COLORS
 # define BLACK "\033[0;30m"

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: thevaris <thevaris@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/08/23 14:57:02 by thevaris          #+#    #+#             */
+/*   Updated: 2025/08/23 15:07:51 by thevaris         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	ps_parser(int ac, char **av, t_stack **a)
@@ -39,26 +51,26 @@ int	ps_parser_ac2(int ac, char **split)
 	return (1);
 }
 
-void numbers_count(t_stack **a, t_stack **b)
+void	numbers_count(t_stack **a, t_stack **b)
 {
-    int lstsize;
+	int	lstsize;
 
-    lstsize = lst_size(a);
-    if (check_organized(a))
-    {
-        free_list(a);
-        return;
-    }
-    if (lstsize == 2)
-        op_two(a);
-    else if (lstsize == 3)
-        op_three(a);
-    else if (lstsize == 4)
-        op_four(a, b);
-    else if (lstsize == 5)
-        op_five(a, b);
-    else if (lstsize > 5)
-        radix(a, b);
+	lstsize = lst_size(a);
+	if (check_organized(a))
+	{
+		free_list(a);
+		return ;
+	}
+	if (lstsize == 2)
+		op_two(a);
+	else if (lstsize == 3)
+		op_three(a);
+	else if (lstsize == 4)
+		op_four(a, b);
+	else if (lstsize == 5)
+		op_five(a, b);
+	else if (lstsize > 5)
+		radix(a, b);
 }
 
 int	main(int ac, char **av)
