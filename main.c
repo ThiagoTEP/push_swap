@@ -6,7 +6,7 @@
 /*   By: thevaris <thevaris@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/23 14:57:02 by thevaris          #+#    #+#             */
-/*   Updated: 2025/08/23 15:07:51 by thevaris         ###   ########.fr       */
+/*   Updated: 2025/08/23 17:57:53 by thevaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,26 @@ void	numbers_count(t_stack **a, t_stack **b)
 		radix(a, b);
 }
 
+int	args_are_only_spaces(int ac, char **av)
+{
+	int	i = 1;
+	int	j;
+	int	found_digit = 0;
+
+	while (i < ac)
+	{
+		j = 0;
+		while (av[i][j])
+		{
+			if (av[i][j] != ' ' && av[i][j] != '\t' && av[i][j] != '\n')
+				found_digit = 1;
+			j++;
+		}
+		i++;
+	}
+	return (!found_digit);
+}
+
 int	main(int ac, char **av)
 {
 	t_stack	*a;
@@ -81,6 +101,8 @@ int	main(int ac, char **av)
 	a = NULL;
 	b = NULL;
 	(void)b;
+	if (args_are_only_spaces(ac, av))
+		return (0);
 	if (!ps_parser(ac, av, &a))
 		return (free_stacks(&a, &b), 0);
 	numbers_count(&a, &b);
