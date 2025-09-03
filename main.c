@@ -6,7 +6,7 @@
 /*   By: thevaris <thevaris@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/23 14:57:02 by thevaris          #+#    #+#             */
-/*   Updated: 2025/08/23 17:57:53 by thevaris         ###   ########.fr       */
+/*   Updated: 2025/09/03 10:30:40 by thevaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,10 +75,12 @@ void	numbers_count(t_stack **a, t_stack **b)
 
 int	args_are_only_spaces(int ac, char **av)
 {
-	int	i = 1;
+	int	i;
 	int	j;
 	int	found_digit = 0;
 
+	i = 1;
+	found_digit = 0;
 	while (i < ac)
 	{
 		j = 0;
