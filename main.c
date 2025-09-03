@@ -77,7 +77,7 @@ int	args_are_only_spaces(int ac, char **av)
 {
 	int	i;
 	int	j;
-	int	found_digit = 0;
+	int	found_digit;
 
 	i = 1;
 	found_digit = 0;
