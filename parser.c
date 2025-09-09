@@ -6,7 +6,7 @@
 /*   By: thevaris <thevaris@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/23 14:56:45 by thevaris          #+#    #+#             */
-/*   Updated: 2025/08/23 15:03:33 by thevaris         ###   ########.fr       */
+/*   Updated: 2025/09/09 09:40:03 by thevaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	check_digits(char **av)
 		if (!av[i][0])
 			return (0);
 		j = -1;
-		if (av[i][0] == '-' || av[i][0] == '+')
+		if ((av[i][0] == '-' || av[i][0] == '+' ) && av[i][1] != '\0')
 			j++;
 		while (av[i][++j])
 			if (!ft_isdigit(av[i][j]))
